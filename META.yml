@@ -1,5 +1,5 @@
 name: IO-Statistics
-version: 0.11
+version: 0.12
 abstract: Transparently perform statistics on IO handles
 author: Chia-liang Kao <clkao@clkao.org>
 license: perl

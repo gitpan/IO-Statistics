@@ -1,3 +1,7 @@
+[Changes for 0.12 - 10 Sep, 2004]
+
+Fix tests.
+
 [Changes for 0.11 - 6 Sep, 2004]
 
 Use PerlIO::via::dynamic 0.10.

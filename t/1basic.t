@@ -1,16 +1,16 @@
 #!/usr/bin/perl -w
 use Test::More tests => 4;
-use IO::Statistic;
+use IO::Statistics;
 use IO::Handle;
 
 my $write;
-eval { IO::Statistic->count (undef, \$write, \*STDOUT, \*STDIN) };
+eval { IO::Statistics->count (undef, \$write, \*STDOUT, \*STDIN) };
 ok ($@ =~ m/not supported/);
 
 sub test_fh {
     my $fh = IO::Handle->new_from_fd (fileno (STDOUT), 'w');
     my $write = 0;
-    IO::Statistic->count (undef, \$write, $fh);
+    IO::Statistics->count (undef, \$write, $fh);
 
     print $fh "fooo\n";
     is ($write, 5);
@@ -24,7 +24,7 @@ sub test_scalar {
     local $/;
     open my $fh, '<', \$scalar;
     my $read = 0;
-    IO::Statistic->count (\$read, undef, $fh);
+    IO::Statistics->count (\$read, undef, $fh);
     <$fh>;
     is ($read, length($scalar));
 }
