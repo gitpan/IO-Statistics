@@ -3,7 +3,7 @@ use 5.008;
 use strict;
 use warnings;
 use PerlIO::via::dynamic '0.10';
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 =head1 NAME
 
@@ -17,7 +17,7 @@ IO::Statistics - Transparently perform statistics on IO handles
  IO::Statistics->count (\$read, \$write, \*STDOUT);
 
  # alternatively:
- $ios = IO::Statistics->new (\$read, \$write);
+ my $ios = IO::Statistics->new (\$read, \$write);
  $ios->via (\*STDOUT);
 
  print "fooo";
